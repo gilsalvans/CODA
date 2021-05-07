@@ -1,0 +1,11 @@
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+/coda.iml
+/frontend/.vscode
+/frontend/.cache
+/frontend/dist
+/src/r/*.RData
+/src/r/*.Rhistory
+/src/r/playgroud.R

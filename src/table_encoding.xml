@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<rows country="AT">
+		<row key="name">
+			<en>District</en>
+			<de>Bezirk</de>
+			<es></es>
+		</row>
+		<row key="gkz">
+			<en>GKZ</en>
+			<de>GKZ</de>
+			<es>GKZ</es>
+		</row>
+		<row key="AnzahlFaelle">
+			<en>Active cases</en>
+			<de>Aktive Fälle</de>
+			<es></es>
+		</row>
+		<row key="AnzahlFaelle7Tage">
+			<en>7 day cases</en>
+			<de>Fälle 7 Tage</de>
+			<es></es>
+		</row>
+		<row key="SiebenTageInzidenzFaelle">
+			<en>7 day incidence</en>
+			<de>7 Tage Inzidenz</de>
+			<es></es>
+		</row>
+		<row key="AnzahlTotSum">
+			<en>Total deaths</en>
+			<de>Tote gesamt</de>
+			<es></es>
+		</row>
+		<row key="AnzahlGeheiltSum">
+			<en>Total recovered</en>
+			<de>Geheilt gesamt</de>
+			<es></es>
+		</row>
+		<row key="Time">
+			<en>Date</en>
+			<de>Datum</de>
+			<es></es>
+		</row>
+		<row key="GKZ">
+			<en>GKZ</en>
+			<de>GKZ</de>
+			<es>GKZ</es>
+		</row>
+		<row key="AnzahlFaelleSum">
+			<en>Total cases</en>
+			<de>Fälle gesamt</de>
+			<es></es>
+		</row>
+		<row key="Bezirk">
+			<en>District</en>
+			<de>Bezirk</de>
+			<es></es>
+		</row>
+	</rows>
+	<rows country="GER">
+		<row key="AnzahlFall">
+			<en>Active cases</en>
+			<de>Aktive Fälle</de>
+			<es></es>
+		</row>
+		<row key="AnzahlTodesfall">
+			<en>Today's deaths</en>
+			<de>Todesfälle heute</de>
+			<es></es>
+		</row>
+		<row key="SummeFall">
+			<en>Total cases</en>
+			<de>Fälle gesamt</de>
+			<es></es>
+		</row>
+		<row key="Bundesland">
+			<en>State</en>
+			<de>Bundesland</de>
+			<es></es>
+		</row>
+		<row key="Landkreis">
+			<en>County</en>
+			<de>Landkreis</de>
+			<es></es>
+		</row>
+		<row key="AnzahlGenesen">
+			<en>Recovered today</en>
+			<de>Heute Genesen</de>
+			<es></es>
+		</row>
+		<row key="SummeGenesen">
+			<en>Total recovered</en>
+			<de>Gesamt Genesen</de>
+			<es></es>
+		</row>
+		<row key="NUTS">
+			<en>NUTS</en>
+			<de>NUTS</de>
+			<es>NUTS</es>
+		</row>
+		<row key="EWZ">
+			<en>Population</en>
+			<de>Einwohner</de>
+			<es></es>
+		</row>
+		<row key="death_rate">
+			<en>Death rate</en>
+			<de>Todesrate</de>
+			<es></es>
+		</row>
+		<row key="cases_per_100k">
+			<en>Cases per 100k</en>
+			<de>Fälle pro 100k</de>
+			<es></es>
+		</row>
+		<row key="cases_per_population">
+			<en>Case rate</en>
+			<de>Fallrate</de>
+			<es></es>
+		</row>
+		<row key="cases7_per_100k">
+			<en>7 day cases per 100k</en>
+			<de>7 Tage Fälle pro 100k</de>
+			<es></es>
+		</row>
+		<row key="EWZ_BL">
+			<en>Population (county)</en>
+			<de>Einwohner (Bundesland)</de>
+			<es></es>
+		</row>
+		<row key="cases7_bl_per_100k">
+			<en>7 day cases per 100k (county)</en>
+			<de>7 Tage Fälle pro 100k (Bundesland)</de>
+			<es></es>
+		</row>
+		<row key="area">
+			<en>District</en>
+			<de>Bezirk</de>
+			<es></es>
+		</row>
+		<row key="SummeTodesfall">
+			<en>Total deaths</en>
+			<de>Todesfälle gesamt</de>
+			<es></es>
+		</row>
+		<row key="Meldedatum">
+			<en>Reporting date</en>
+			<de>Meldedatum</de>
+			<es></es>
+		</row>
+	</rows>
+	<rows country="ESP">
+		
+	</rows>
+</data>

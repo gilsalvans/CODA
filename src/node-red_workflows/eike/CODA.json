@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1d0a9b9b.4477b4",
+        "type": "telegram sender",
+        "z": "741aeb2d.ef3794",
+        "name": "bot_Austria",
+        "bot": "3b0c9b73.71824c",
+        "x": 970,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b0c9b73.71824c",
+        "type": "telegram bot",
+        "z": "",
+        "botname": "at_covid19Bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]

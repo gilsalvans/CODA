@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Setting encoding and responsive design -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link to the css of the app -->
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <!--Load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Reload page on screen resize -->
+    <script>
+      if($(window).width() >= 760) { //do not resize on mobile - so screen is not constantly reloading
+        var t = 0, resizing = false;
+
+        function _reload() {
+          resizing = false;
+          window.location.reload(true);
+        }
+
+        window.addEventListener('resize', function () {
+          if (!resizing) {
+            resizing = true;
+            t = setTimeout(_reload, 500); //setting timeout to 0.5 seconds on reloading after resize
+          }
+        });
+      }
+    </script>
+    <!-- Tab title -->
+    <title>Covid19 Dashboard - CODA </title>
+  </head>
+  <body>
+    <!-- Loading page div taking loading animation -->
+    <div id="loading">
+      <img id="loading-image" src="css/img/loader.gif" alt="Loading..." />
+      <p>Loading Web App...</p>
+    </div>
+    <!-- Adding header with the tabs of each country to see its data-->
+    <div class="header">
+      <!-- MUST DEFINE FUNCTION FOR TABS BELOW - w each dashboard-->
+      <h1>COVID-19</h1>
+      <div class="country_buttons">
+        <button class="tablinks" onclick="dashbCountry(event, 'Austria')" >Austria</button>
+        <button class="tablinks" onclick="dashbCountry(event, 'Germany')" id="defaultOpen" >Germany</button>
+        <button class="tablinks" onclick="dashbCountry(event, 'Spain')">Spain</button>
+        <button class="tablinks" id="measures_db" onclick="dashbCountry(event, 'Worldwide_Measures')">Worldwide Measures</button>
+      </div>
+    </div>
+    <!-- Austria's Dashboard -->
+    <div id="Austria" class="tabcontent">
+      <div id="dashboard">
+        <div id="map_AT" class="map">
+          <div id="legend">
+            <b>New weekly cases <br> per 100k inhab.:</b>
+          <div class="udiv_legend" id="legend_1">
+            <!-- GetLegend request of our service as WMS to get the image with specific styling -->
+              <img src="http://human.zgis.at/geoserver/covid_dashboard/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&VERSION=1.0.0&LAYER=covid_dashboard:austria_cases_today&WIDTH=15&HEIGHT=15&FORMAT=image/png&legend_options=bgColor:0x343834;fontColor:0xffffff">
+            </div>
+          </div>
+        </div>
+        <!-- Side info div with table and time series chart divisions -->
+        <div id="side_info">
+          <div id="table_AT" class="table"></div>
+          <div id="chart_AT" class="chart"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Germany's Dashboard -->
+    <div id="Germany" class="tabcontent" style="display:block">
+      <div id="dashboard">
+        <div id="map_DE" class="map">
+          <div id="legend">
+            <b>New weekly cases <br> per 100k inhab.:</b>
+            <div class="udiv_legend" id="legend_1">
+             <!-- GetLegend request of our service as WMS to get the image with specific styling -->
+              <img src="http://human.zgis.at/geoserver/covid_dashboard/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&VERSION=1.0.0&LAYER=covid_dashboard:austria_cases_today&WIDTH=15&HEIGHT=15&FORMAT=image/png&legend_options=bgColor:0x343834;fontColor:0xffffff"">
+            </div>
+          </div>
+        </div>
+        <!-- Side info div with table and time series chart divisions -->
+        <div id="side_info">
+          <div id="table_DE" class="table"></div>
+          <div id="chart_DE" class="chart"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Spain's Dashboard -->
+    <div id="Spain" class="tabcontent">
+      <div id="dashboard">
+        <div id="map_ES" class="map">
+          <div id="legend">
+            <b>Current cases:</b>
+          <div class="udiv_legend" id="legend_1">
+            <!-- GetLegend request of our service as WMS to get the image with specific styling-->
+              <img src="http://human.zgis.at/geoserver/covid_dashboard/wms?service=WMS&version=1.1.0&REQUEST=GetLegendGraphic&VERSION=1.0.0&LAYER=covid_dashboard:spain_cases_today&WIDTH=15&HEIGHT=15&FORMAT=image/png&legend_options=bgColor:0x343834;fontColor:0xffffff"">
+            </div>
+          </div>
+        </div>
+        <!-- Side info div with table and time series chart divisions -->
+        <div id="side_info">
+          <div id="table_ES" class="table"></div>
+          <div id="chart_ES" class="chart"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Worldwide measures & restrictions Dashboard -->
+    <div id="Worldwide_Measures" class="tabcontent">
+      <div id="dashboard">
+        <div id="map_restrictions" class="map"></div>
+        <!-- Side info with each selected country measures -->
+        <div id="info_measures"></div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="close">
+          <a href="sidebar" id="sidebar-close" class="btn-close">Close</a>
+      </div>
+      <div class="content">
+          <p><b>Telegram Bot & Info</b></br>A Telegram bot has been developed for each dashboard. Click on the desired section to get its specific QR code. Note that the QR code image is also clickable to the link of the bot. These bots provide the user with the current Covid19 situation of the selected country.</p>
+          </br>
+          <button class="dropdown-btn">Telegram Bot AT
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a target="_blank" rel="noopener noreferrer" href="https://t.me/at_covid19Bot" ><img src="telegram/telegram_AT.svg" height="80vh" width="80vh"></a>
+          </div>
+          </br>
+          <button class="dropdown-btn">Telegram Bot DE 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a target="_blank" rel="noopener noreferrer" href="https://t.me/de_covid19Bot" ><img src="telegram/telegram_DE.svg" height="80vh" width="80vh"></a>
+          </div>
+          </br>
+          <button class="dropdown-btn">Telegram Bot ES
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a target="_blank" rel="noopener noreferrer" href="https://t.me/es_covid19Bot" ><img src="telegram/telegram_ES.svg" height="80vh" width="80vh"></a>
+          </div>
+      </div>
+    </div>
+    <!-- Adding footer with uni sbg logo in the middle & contact option -->
+    <div class="footer">
+      <span class="email"><a href="mailto:coda.sdi20@gmail.com">Contact us</a></span>
+      <img href="sidebar" id="open-left" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" height="40" width="40">
+    </div>
+    <!-- Loading main js file, sidebar js interaction & dashboard of measures -->
+    <script src="js/main.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/worldwide_measures.js"></script>
+    <!-- loading page function - timeout set to 8 seconds so the js has time to load -->
+    <script>
+      $(document).ready(function(){
+        setTimeout(function(){
+          $('#loading').hide();
+        },7000); 
+      });
+    </script>
+    <!-- function for selecting different tabs (dashboards) -->
+    <script>
+      function dashbCountry(evt, countryName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(countryName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      //Default tab - Austria Dashboard
+      document.getElementById("defaultOpen").click();
+      </script>
+
+  </body>
+</html>

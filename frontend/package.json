@@ -1,0 +1,27 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build --public-url . index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "coda"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gridjs": "^3.0.2",
+    "ol": "^6.4.3",
+    "ol-layerswitcher": "^3.7.0",
+    "ol-popup": "^4.0.0",
+    "plotly.js-dist": "^1.57.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}

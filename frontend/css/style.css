@@ -1,0 +1,456 @@
+* {
+    /*wildcard to apply these settings to the entire html doc*/
+    box-sizing: border-box;
+    /*fit all the elements within the page size*/
+    margin: 0;
+    /*margin and padding to 0 to remove all the possible extra spaces*/
+    padding: 0;
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    background-color: black;
+    z-index: 99;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+#loading-image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    z-index: 100;
+}
+
+body {
+    background: black;
+}
+
+.header {
+    height: 5.2vh;
+    /*vh = viewport height (1vh = 1% of the according device's height)*/
+    top: 0;
+    /*to place it at the top*/
+    text-align: center;
+    background: rgb(52, 56, 52);
+    border-bottom: 1.5px solid white;
+    width: 100%;
+}
+
+.header button {
+    background-color: rgb(52, 56, 52);
+    float: left;
+    border: none;
+    outline-style: outset;
+    outline-color: #a2a2a2;
+    outline-width: 3px;
+    cursor: pointer;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 3.2vh;
+    color: rgb(241, 228, 228);
+    margin-right: 4.5px;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.country_buttons {
+    float: left;
+    margin-left: 3vh;
+}
+
+/* Change background color of tabs on hover */
+
+.header button:hover {
+    background-color: #a2a2a2;
+}
+/* Change color when tab is active */
+.header button.active {
+    outline-color: #a2a2a2;
+    outline-style: inset;
+    outline-width: 3px;
+    background-color: #a2a2a2;
+}
+
+.header #measures_db:hover{
+    color: rgb(241, 228, 228);
+}
+
+.header #measures_db{
+    margin-left: 10px;
+    font-size: 3.2vh;
+    color: #aac2ec;
+    outline-color: #a2a2a2;
+}
+
+.header h1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 3.2vh;
+    color: rgb(241, 228, 228);
+    position: relative;
+    float: left;
+    margin-left: 1vh;
+    margin-top: 0.5vh;
+}
+
+#dashboard {
+    display: flex;
+    /*flex parameter makes different layout sizes for different devices*/
+    flex-wrap: wrap;
+    height: 88.5vh;
+    width: 100%;
+}
+
+.map {
+    height: 100%;
+    z-index: 3;
+    /* placing the map above the text but below the legend*/
+    float: left;
+    width: 66%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow:hidden;
+    padding: 12px 15px 12px 12px;
+    border-left: 1.5px solid white;
+    border-right: 1.5px solid white;
+}
+
+#side_info {
+    height: 100%;
+    width: 34%;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(52, 56, 52);
+    border-right: 1.5px solid white
+}
+
+.table {
+    height: 37vh;
+    width: 100%;
+    background-color: transparent;
+}
+
+#chart_AT {
+    height: 41vh;
+    width: 65vh;
+    bottom: 0vh;
+    position: relative;
+} 
+
+#chart_DE {
+    height: 41vh;
+    width: 65vh;
+    bottom: 0vh;
+    position: relative;
+}
+
+#chart_ES {
+    height: 41vh;
+    width: 65vh;
+    position: relative;
+    bottom: 0vh;
+}
+
+#info_measures {
+    height: 100%;
+    width: 34%;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(52, 56, 52);
+    border-right: 1.5px solid white;
+    overflow: auto;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 13px;
+}
+
+#info_measures h1{
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.footer {
+    bottom: 0;
+    /*to place it at the bottom*/
+    height: 6.3vh;
+    background: rgb(52, 56, 52);
+    text-align: center;
+    border-top: 1.5px solid white;
+    width: 100%;
+}
+
+.footer .email {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    float: right;
+    margin-right: 4vh;
+    margin-top: 1.5vh;
+    border: 1px solid rgb(174, 174, 174);
+    color: rgb(241, 228, 228);
+    background-color: rgb(174, 174, 174);
+}
+
+.footer .email:hover {
+    opacity: 0.75;
+}
+
+.footer #open-left {
+    /*color: rgb(241, 228, 228);*/
+    /*background: rgb(52, 56, 52);*/
+    /*border: 1px solid white;*/
+    transition: all 0.5s ease;
+    float: left;
+    margin-left: 4vh;
+    margin-top: 1vh;
+    /*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+    text-decoration: underline;
+}
+
+.footer #open-left:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    max-width: 35vh;
+    background: rgb(52, 56, 52);
+    box-sizing: border-box;
+    transform: translateX(-120%);
+    transition: all 0.3s cubic-bezier(0.35, 0.38, 0.07, 0.83);
+    overflow: auto;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.sidebar .close .btn-close {
+    /*background: red;*/
+    color: #6b7280;
+    float: right;
+    box-shadow: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.sidebar .close::after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden
+}
+
+.sidebar.active {
+    transform: translateX(0)
+}
+
+.sidebar .content {
+    padding: 10px
+}
+
+.sidebar .content {
+    line-height: 1.5;
+    font-size: 0.875em
+}
+
+.sidebar .content ul,
+.sidebar .content ol {
+    margin: 20px 0 20px 20px
+}
+
+.sidebar .dropdown-container {
+    display: none;
+    background-color:rgb(52, 56, 52);
+    padding-left: 8px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.sidebar .dropdown-btn {
+    background-color: rgb(52, 56, 52);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    padding: 5px;
+    color: white;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+
+#legend {
+    position: absolute;
+    bottom: 14vh;
+    right: 35%;
+    z-index: 10;
+    /*to put this div over the map*/
+    background-color: rgb(52, 56, 52);
+    color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    border: 1px solid white
+}
+
+.ol-popup {
+    background-color: rgb(52, 56, 52);
+}
+
+.ol-popup-content {
+    padding: 0 0.5em;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.ol-zoom-extent button {
+    background-image: url('../css/img/home_button.png');
+    background-size: 100%;
+    background-color: blue;
+}
+
+/*when screen's width is smaller then 760px*/
+
+
+/*change divs of table and time series (side-info div) to bottom*/
+
+@media only screen and (max-width: 760px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    #loading {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        display: block;
+        background-color: black;
+        z-index: 99;
+        text-align: center;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: white;
+    }
+    #loading-image {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        z-index: 100;
+    }
+    .header {
+        height: 10vh;
+        /*vh = viewport height (1vh = 1% of the according device's height)*/
+        top: 0;
+        /*to place it at the top*/
+        text-align: center;
+        background: rgb(52, 56, 52);
+        border-bottom: 1.5px solid white;
+        width: 105%;
+    }
+
+    .header button {
+        background-color: rgb(52, 56, 52);
+        float: left;
+        border: none;
+        outline-style: solid;
+        outline-color: black;
+        outline-width: 0.1vh;
+        cursor: pointer;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 3.1vh;
+        color: rgb(241, 228, 228);
+        margin-right: 4.5px;
+        margin-top: 3px;
+        margin-left: 3px;
+        margin-bottom: 5px;
+    }
+
+    #dashboard {
+        display: flex;
+        /*flex parameter makes different layout sizes for different devices*/
+        flex-wrap: wrap;
+        width: 105%;
+        /*needed to use 105% to harmonize the view with the smallest phone widths*/
+        height: 91vh;
+    }
+    .map {
+        height: 60%;
+        float: top;
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    #legend {
+        position: absolute;
+        top: 10.5vh;
+        height: 6vh;
+        right: 0;
+        z-index: 10;
+        /*to put this div over the map*/
+        background-color: rgb(52, 56, 52);
+        color: white;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 1.5vh;
+        border: none !important;
+    }
+    #side_info {
+        height: 45%;
+        width: 100%;
+        float: bottom;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(52, 56, 52);
+    }
+    .table {
+        display: none;
+        /*on phones display only time series*/
+    }
+    #chart_AT {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    #chart_DE {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    #chart_ES {
+        height: 100%;
+        width: 100%;
+        position: relative; 
+    }
+
+    #info_measures {
+        height: 45%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(52, 56, 52);
+        border-right: 1.5px solid white;
+        overflow: auto;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 13px;
+    }
+
+    #info_measures h1{
+        font-size: 18px;
+        text-decoration: underline;
+    }
+
+    .footer {
+        display: none;
+        /*not displayed on phones to optimize space*/
+    }
+    .header h1 {
+        display: none;
+    }
+}
